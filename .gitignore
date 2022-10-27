@@ -1,0 +1,9 @@
+*.class
+target/
+*.iml
+.idea/
+Outdated/
+!gradle-wrapper.jar
+gradle-app.setting
+!gradle-wrapper.properties
+.gradletasknamecache

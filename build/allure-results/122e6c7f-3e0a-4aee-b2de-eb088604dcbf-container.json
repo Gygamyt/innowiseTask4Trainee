@@ -1,0 +1,1 @@
+{"uuid":"122e6c7f-3e0a-4aee-b2de-eb088604dcbf","name":"correctLogin()","children":["0d8b6f47-e758-45d0-a1e4-ed2ac5379dc2"],"befores":[],"afters":[{"name":"destroySession","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1666557887969,"stop":1666557888576}],"start":1666557885682,"stop":1666557888663}
