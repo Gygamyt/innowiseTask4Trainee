@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Git Push') {
             steps {
-                git url: 'https://github.com/Gygamyt/innowiseTask4Trainee/tree/master'
+                git url: 'https://github.com/Gygamyt/innowiseTask4Trainee.git'
             }
         }
         stage('Tests') {
