@@ -1,10 +1,8 @@
 pipeline {
-    agent {
-        any
-    }
-    tool {
-        gradle('gradle')
-        jdk('jdk')
+    agent any
+    tools {
+        gradle 'gradle'
+        jdk 'jdk'
     }
     stages {
         stage('Git Push') {
