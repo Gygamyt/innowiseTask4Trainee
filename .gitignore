@@ -7,3 +7,4 @@ Outdated/
 gradle-app.setting
 !gradle-wrapper.properties
 .gradletasknamecache
+build/
