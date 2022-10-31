@@ -1,5 +1,7 @@
+import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 abstract public class TestsBase {
 
@@ -13,4 +15,8 @@ abstract public class TestsBase {
         Driver.closeDriver();
     }
 
+    @Attachment(value = "Page screenshot", type = "image/png")
+    public byte[] getScreenshot() {
+        return ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+    }
 }

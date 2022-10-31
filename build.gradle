@@ -6,8 +6,8 @@ plugins {
     id 'idea'
 }
 
-sourceCompatibility = 1.14
-targetCompatibility = 1.14
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
 group 'org.example'
 version '1.0-SNAPSHOT'
