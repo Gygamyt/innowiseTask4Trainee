@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Report') {
             steps{
-                allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'target/allure-results']], report: 'target/allure-report', results: [[path: 'target/allure-report'], [path: 'target/allure-results']]
+                allure includeProperties: false, jdk: '', results: [[path: './allure-results']]
             }
         }
     }
