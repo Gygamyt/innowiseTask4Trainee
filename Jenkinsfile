@@ -13,11 +13,7 @@ pipeline {
         stage('Tests') {
             steps {
                 bat "gradle cleanTest test"
-            }
-        }
-        stage('Report') {
-            steps{
-                allure includeProperties: false, jdk: '', results: [[path: './allure-report']]
+                allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'target/allure-results']], report: 'target/allure-report', results: [[path: 'target/allure-results']]
             }
         }
     }
