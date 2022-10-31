@@ -16,8 +16,8 @@ pipeline {
             }
         }
         stage('Report'){
-        steps{
-            allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'target/build/allure-results']], report: 'target/allure-report', results: [[path: 'target/build/allure-results']]
+            steps{
+                allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'build/allure-results']], report: 'target/allure-report', results: [[path: 'build/allure-results']]
             }
         }
     }
