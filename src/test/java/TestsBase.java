@@ -1,3 +1,4 @@
+import Conf.Driver;
 import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.OutputType;
@@ -7,7 +8,7 @@ abstract public class TestsBase {
 
 //    @BeforeEach
 //    void setUpSession() {
-//        Driver.getDriver();
+//        Conf.Driver.getDriver();
 //    }
 
     @AfterEach
