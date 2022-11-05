@@ -3,6 +3,7 @@ import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 abstract public class TestsBase {
 
@@ -11,8 +12,11 @@ abstract public class TestsBase {
 //        Conf.Driver.getDriver();
 //    }
 
+    public WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+
     @AfterEach
-    void destroySession() {
+    void destroySession() throws InterruptedException {
+//        Thread.sleep(50000);
         Driver.closeDriver();
     }
 

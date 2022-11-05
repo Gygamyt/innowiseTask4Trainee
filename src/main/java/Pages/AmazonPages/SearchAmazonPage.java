@@ -14,8 +14,6 @@ public class SearchAmazonPage extends AbstractPage {
         super(driver);
     }
 
-    private final JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
-    private final Actions actions = new Actions(Driver.getDriver());
     @FindBy(xpath = "(//a[@class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"])[2]")
     private static WebElement searchResultForAdding;
     @FindBy(xpath = "//*[@id=\"add-to-cart-form\"]/div/span[1]")

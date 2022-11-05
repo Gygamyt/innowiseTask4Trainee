@@ -13,8 +13,6 @@ public class PageOfRequestedProduct extends AbstractPage {
         super(driver);
     }
 
-    Actions actions = new Actions(Driver.getDriver());
-
     @FindBy(xpath = "//h1[@class=\"catalog-masthead__title js-nav-header\"]")
     public WebElement valueForResultOfRequestCheck;
 

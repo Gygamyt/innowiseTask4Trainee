@@ -27,8 +27,8 @@ public class OnlinerTest extends TestsBase {
         Assertions.assertTrue(cartOnlinerPage.emptyCartMessage.getText().equalsIgnoreCase("Ваша корзина пуста"));
     }
 
-    @Test
-    public void utilityTest() {
-        pageOfRequestedProduct.addProductToCart();
-    }
+//    @Test
+//    public void utilityTest() {
+//        pageOfRequestedProduct.addProductToCart();
+//    }
 }

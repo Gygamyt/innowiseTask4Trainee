@@ -22,5 +22,6 @@ public class AmazonTest extends TestsBase {
         searchAmazonPage.addPhoneAndCheck();
         baseAmazonPage.checkResultOfTest();
         Assertions.assertFalse(baseAmazonPage.variableForResultChecking.getText().equalsIgnoreCase("Your Amazon Cart is empty."));
+        getScreenshot();
     }
 }

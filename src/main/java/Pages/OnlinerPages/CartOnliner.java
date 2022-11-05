@@ -14,8 +14,6 @@ public class CartOnliner extends AbstractPage {
         super(driver);
     }
 
-    Actions actions = new Actions(Driver.getDriver());
-
     @FindBy(xpath = "//div[@class=\"cart-message__title cart-message__title_big\"]")
     public WebElement emptyCartMessage;
     @FindBy(xpath = "//a[@class=\"button-style button-style_auxiliary button-style_small cart-form__button cart-form__button_remove\"]")
