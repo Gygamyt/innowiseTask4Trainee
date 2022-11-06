@@ -14,16 +14,12 @@ public class LunaPage extends AbstractPage {
     public LunaPage(WebDriver driver) {
         super(driver);
     }
-
     @FindBy(xpath = "//button[@class=\"Button PersonalContacts__item PersonalContacts__worktime Button--outline\"]")
     public WebElement lunaWorkingHoursButton;
-
     @FindBy(css = "span.Button__text")
     public WebElement addressButton;
-
     @FindBy(xpath = "//span[@class=\"Button__phone\"]")
     public WebElement phoneButton;
-
     @FindBy(xpath = "//div[@class=\"Popup__content\"]")
     public WebElement forWaiter;
 

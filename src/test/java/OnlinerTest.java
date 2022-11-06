@@ -3,6 +3,7 @@ import Pages.OnlinerPages.CartOnliner;
 import Pages.OnlinerPages.MainOnlinerPage;
 import Pages.OnlinerPages.PageOfRequestedProduct;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 public class OnlinerTest extends TestsBase {
@@ -10,7 +11,7 @@ public class OnlinerTest extends TestsBase {
     PageOfRequestedProduct pageOfRequestedProduct = new PageOfRequestedProduct(Driver.getDriver());
     CartOnliner cartOnlinerPage = new CartOnliner(Driver.getDriver());
 
-    @Test
+    @RepeatedTest(5)
     public void onlinerTest() {
         Driver.getDriver().get("https://cart.onliner.by/");
         cartOnlinerPage.cartCheckingAndDeleting();
@@ -19,16 +20,11 @@ public class OnlinerTest extends TestsBase {
         Assertions.assertTrue(pageOfRequestedProduct.valueForResultOfRequestCheck.getText().equalsIgnoreCase(mainOnlinerPage.request));
         pageOfRequestedProduct.moduleChecking();
         pageOfRequestedProduct.addProductToCart();
-        System.out.println(pageOfRequestedProduct.sidePanelForAssertion.getText());
         Assertions.assertTrue(pageOfRequestedProduct.sidePanelForAssertion.getText().equalsIgnoreCase("Товар добавлен в корзину"));
         Assertions.assertTrue(pageOfRequestedProduct.numberOfProductsValue.getText().equalsIgnoreCase("1"));
         Driver.getDriver().get("https://cart.onliner.by/");
         cartOnlinerPage.cartCheckingAndDeleting();
         Assertions.assertTrue(cartOnlinerPage.emptyCartMessage.getText().equalsIgnoreCase("Ваша корзина пуста"));
+        getScreenshot();
     }
-
-//    @Test
-//    public void utilityTest() {
-//        pageOfRequestedProduct.addProductToCart();
-//    }
 }

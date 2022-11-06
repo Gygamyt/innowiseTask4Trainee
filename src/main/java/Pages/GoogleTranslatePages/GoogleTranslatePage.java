@@ -40,7 +40,8 @@ public class GoogleTranslatePage extends AbstractPage {
 
     public void setLang(WebElement allLangButton, WebElement langButton) {
         allLangButton.click();
+        actions.moveToElement(langButton).perform();
         waiter.until(ExpectedConditions.elementToBeClickable(langButton));
-        actions.moveToElement(langButton).click().perform();
+        langButton.click();
     }
 }

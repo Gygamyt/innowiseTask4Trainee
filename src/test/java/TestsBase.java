@@ -20,6 +20,7 @@ abstract public class TestsBase {
         Driver.closeDriver();
     }
 
+
     @Attachment(value = "Page screenshot", type = "image/png")
     public byte[] getScreenshot() {
         return ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);

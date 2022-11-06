@@ -1,6 +1,7 @@
 import Conf.Driver;
 import Pages.ExampleLoginTestPages.LoginTestPage;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 public class ExampleTest extends TestsBase {
@@ -10,7 +11,7 @@ public class ExampleTest extends TestsBase {
     private final String incorrectLogin = "foo";
     private final String incorrectPassword = "bar!";
 
-    @Test
+    @RepeatedTest(5)
     public void correctLogin() {
         Driver.getDriver().get("https://the-internet.herokuapp.com/login");
         loginTestPage.fillLoginBar(correctLogin);
@@ -20,7 +21,7 @@ public class ExampleTest extends TestsBase {
         getScreenshot();
     }
 
-    @Test
+    @RepeatedTest(5)
     public void incorrectLogin() {
         Driver.getDriver().get("https://the-internet.herokuapp.com/login");
         loginTestPage.fillLoginBar(incorrectLogin);

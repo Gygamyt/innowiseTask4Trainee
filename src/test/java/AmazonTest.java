@@ -2,6 +2,7 @@ import Conf.Driver;
 import Pages.AmazonPages.BaseAmazonPage;
 import Pages.AmazonPages.SearchAmazonPage;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 public class AmazonTest extends TestsBase {
@@ -10,7 +11,7 @@ public class AmazonTest extends TestsBase {
 
     SearchAmazonPage searchAmazonPage = new SearchAmazonPage(Driver.getDriver());
 
-    @Test
+    @RepeatedTest(5)
     public void amazonTest() throws InterruptedException {
         Driver.getDriver().get("https://www.amazon.com/");
         baseAmazonPage.loginArrowButtonOpen();
@@ -21,7 +22,7 @@ public class AmazonTest extends TestsBase {
         Assertions.assertTrue(searchAmazonPage.searchChecker.getText().equalsIgnoreCase("\"iPhone\""));
         searchAmazonPage.addPhoneAndCheck();
         baseAmazonPage.checkResultOfTest();
-        Assertions.assertFalse(baseAmazonPage.variableForResultChecking.getText().equalsIgnoreCase("Your Amazon Cart is empty."));
         getScreenshot();
+        Assertions.assertFalse(baseAmazonPage.variableForResultChecking.getText().equalsIgnoreCase("Your Amazon Cart is empty."));
     }
 }

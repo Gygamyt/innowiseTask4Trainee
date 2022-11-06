@@ -3,9 +3,9 @@ import Pages.RelaxPages.LunaPage;
 import Pages.RelaxPages.RelaxMainPage;
 import Pages.RelaxPages.RestaurantsPage;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
@@ -32,7 +32,7 @@ public class RelaxTest extends TestsBase {
 
     public ArrayList<String> lunaWorkingHours;
 
-    @Test
+    @RepeatedTest(5)
     public void lunaTest() {
         Driver.getDriver().get("https://www.relax.by/");
         relaxMainPage.findLuna();
@@ -52,7 +52,7 @@ public class RelaxTest extends TestsBase {
         getScreenshot();
     }
 
-    @Test
+    @RepeatedTest(5)
     public void restaurantTest() {
         Driver.getDriver().get("https://www.relax.by/");
         relaxMainPage.openRestaurantPage();
