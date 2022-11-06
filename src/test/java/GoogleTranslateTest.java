@@ -1,5 +1,6 @@
 import Conf.Driver;
 import Pages.GoogleTranslatePages.GoogleTranslatePage;
+import org.apache.logging.log4j.core.config.plugins.PluginLoggerContext;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class GoogleTranslateTest extends TestsBase {
     GoogleTranslatePage googleTranslatePage = new GoogleTranslatePage(Driver.getDriver());
 
-    @RepeatedTest(5)
+    @Test
     public void googleTranslateTest() {
         Driver.getDriver().get("https://translate.google.com/");
         googleTranslatePage.translateTest();

@@ -11,7 +11,7 @@ public class OnlinerTest extends TestsBase {
     PageOfRequestedProduct pageOfRequestedProduct = new PageOfRequestedProduct(Driver.getDriver());
     CartOnliner cartOnlinerPage = new CartOnliner(Driver.getDriver());
 
-    @RepeatedTest(5)
+    @Test
     public void onlinerTest() {
         Driver.getDriver().get("https://cart.onliner.by/");
         cartOnlinerPage.cartCheckingAndDeleting();

@@ -15,11 +15,16 @@ pipeline {
                 bat "gradle clean test"
             }
         }
-        stage('Report') {
-                steps {
-                     always {
-                               allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'build/allure-results']], report: 'target/allure-report', results: [[path: 'build/allure-results']]
-                }
+//         stage('Report') {
+//                 steps {
+//                      always {
+//                      allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'build/allure-results']], report: 'target/allure-report', results: [[path: 'build/allure-results']]
+//                 }
+            }
+        post {
+               always {
+                       allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'build/allure-results']], report: 'target/allure-report', results: [[path: 'build/allure-results']]
+               }
             }
         }
     }

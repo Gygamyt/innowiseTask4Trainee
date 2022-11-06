@@ -32,7 +32,7 @@ public class RelaxTest extends TestsBase {
 
     public ArrayList<String> lunaWorkingHours;
 
-    @RepeatedTest(5)
+    @Test
     public void lunaTest() {
         Driver.getDriver().get("https://www.relax.by/");
         relaxMainPage.findLuna();
@@ -52,13 +52,12 @@ public class RelaxTest extends TestsBase {
         getScreenshot();
     }
 
-    @RepeatedTest(5)
+    @Test
     public void restaurantTest() {
         Driver.getDriver().get("https://www.relax.by/");
         relaxMainPage.openRestaurantPage();
         restaurantsPage.applyingFilters();
-//        Assertions.assertTrue(restaurantsPage.varForAssertion.getText().equalsIgnoreCase("2"));
-        System.out.println(restaurantsPage.varForAssertionFirst.getText() + " " + restaurantsPage.varForAssertionSecond.getText());
+        Assertions.assertTrue(restaurantsPage.varForAssertionSecond.getText().equalsIgnoreCase("2"));
         getScreenshot();
     }
 }

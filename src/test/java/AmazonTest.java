@@ -11,7 +11,7 @@ public class AmazonTest extends TestsBase {
 
     SearchAmazonPage searchAmazonPage = new SearchAmazonPage(Driver.getDriver());
 
-    @RepeatedTest(5)
+    @Test
     public void amazonTest() throws InterruptedException {
         Driver.getDriver().get("https://www.amazon.com/");
         baseAmazonPage.loginArrowButtonOpen();
