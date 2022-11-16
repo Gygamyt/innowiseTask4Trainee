@@ -35,10 +35,12 @@ public class Driver {
     public static WebDriver setDriversConf() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("enable-automation");
-        options.addArguments("--start-maximized");
-//        options.addArguments("--window-size=1920,1080");
+//        options.addArguments("--start-maximized");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-extensions");
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920x1080");
         return new ChromeDriver(options);
     }
 
@@ -52,9 +54,5 @@ public class Driver {
                 .manage()
                 .timeouts()
                 .implicitlyWait(5, TimeUnit.SECONDS);
-    }
-
-    public static void main(String[] args) {
-        closeDriver();
     }
 }
