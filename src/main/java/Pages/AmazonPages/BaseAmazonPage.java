@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class BaseAmazonPage extends AbstractPage {
 
@@ -13,12 +14,17 @@ public class BaseAmazonPage extends AbstractPage {
         super(driver);
     }
 
+    SearchAmazonPage searchAmazonPage = new SearchAmazonPage(Driver.getDriver());
+
     public final Actions actions = new Actions(Driver.getDriver());
+
     private final String email = "testtesttesttesttestt11t@gmail.com";
+
     private final String password = "8xVWTOmGermx";
+
     private final String request = "iPhone";
 
-    @FindBy(xpath = "(//span[@class=\"nav-icon nav-arrow\"])[2]")
+    @FindBy(xpath = "//span[@class=\"nav-line-2 \"]")
     private static WebElement loginArrowButton;
 
     @FindBy(css = "span.nav-action-inner")
@@ -51,11 +57,11 @@ public class BaseAmazonPage extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"sc-active-cart\"]/div/div/div[1]/h1")
     public WebElement variableForResultChecking;
 
-    public void loginArrowButtonOpen() throws InterruptedException {
+    public void loginArrowButtonOpen() {
         actions
                 .moveToElement(loginArrowButton)
                 .perform();
-        Thread.sleep(1000); /////////////сюда вэйтер жмыхнуть не забыть
+        waiter.until(ExpectedConditions.elementToBeClickable(signInButton));
         actions
                 .click(signInButton)
                 .perform();
@@ -86,6 +92,7 @@ public class BaseAmazonPage extends AbstractPage {
     }
 
     public void checkResultOfTest() {
+        waiter.until(ExpectedConditions.elementToBeClickable(searchAmazonPage.varForAdding));
         Driver.getDriver().get("https://www.amazon.com/");
         cartButton.click();
     }

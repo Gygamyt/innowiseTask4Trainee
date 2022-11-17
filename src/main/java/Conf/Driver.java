@@ -1,8 +1,6 @@
 package Conf;
 
 import Utils.ConfPropertiesReader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,16 +12,11 @@ public class Driver {
 
     private static final ThreadLocal<WebDriver> localStorage = new ThreadLocal<>();
 
-    private static final Logger logger = LogManager.getLogger(Driver.class);
-
-    private static final String driverLog = "\n//////////////////////\nConf.Driver has been called.\n//////////////////////";
-
     public static WebDriver getDriver() {
         if (localStorage.get() == null) {
             setUpDriver();
         }
         setupImplicitWait();
-//        logger.info(driverLog);
         return localStorage.get();
     }
 

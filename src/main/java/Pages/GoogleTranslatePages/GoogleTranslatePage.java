@@ -14,18 +14,25 @@ public class GoogleTranslatePage extends AbstractPage {
 
     @FindBy(xpath = "(//div[@class=\"VfPpkd-Bz112c-RLmnJb\"])[1]")
     private WebElement leftAllLangButton;
+
     @FindBy(xpath = "(//div[@class=\"VfPpkd-Bz112c-RLmnJb\"])[3]")
     private WebElement rightAllLangButton;
+
     @FindBy(xpath = "(//div[@data-language-code=\"en\"])[1]")
     private WebElement englishLeftButtonFromAll;
+
     @FindBy(xpath = "(//div[@data-language-code=\"ru\"])[2]")
     private WebElement russianRightButtonFromAll;
+
     @FindBy(xpath = "//button[@data-language-code=\"ru\"]")
     public WebElement russianRightButton;
+
     @FindBy(xpath = "//button[@data-language-code=\"en\"]")
     public WebElement englishLeftButton;
+
     @FindBy(xpath = "//textarea[@aria-label=\"Source text\"]")
     private WebElement textBar;
+
     @FindBy(xpath = "//span[@class=\"ryNqvb\"]")
     public WebElement resultBar;
 

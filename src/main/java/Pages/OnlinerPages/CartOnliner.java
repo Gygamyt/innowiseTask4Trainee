@@ -14,6 +14,7 @@ public class CartOnliner extends AbstractPage {
 
     @FindBy(xpath = "//div[@class=\"cart-message__title cart-message__title_big\"]")
     public WebElement emptyCartMessage;
+
     @FindBy(xpath = "//a[@class=\"button-style button-style_auxiliary button-style_small cart-form__button cart-form__button_remove\"]")
     private static WebElement cartRemoveButton;
 

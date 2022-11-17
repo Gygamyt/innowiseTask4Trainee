@@ -33,5 +33,4 @@ public class MainOnlinerPage extends AbstractPage {
                 .click(result)
                 .perform();
     }
-
 }

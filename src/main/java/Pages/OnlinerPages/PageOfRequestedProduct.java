@@ -20,10 +20,10 @@ public class PageOfRequestedProduct extends AbstractPage {
     @FindBy(xpath = "//li[@class=\"item selected\"]")
     private static WebElement selectedItemXpath;
 
-    @FindBy(xpath = "//*[text() = 'В корзину']")
+    @FindBy(xpath = "(//*[text() = 'В корзину'])[2]")
     private static WebElement neededProduct;
 
-    @FindBy(xpath = "//div[@class=\"product-aside__offers-item product-aside__offers-item_primary\"]")
+    @FindBy(xpath = "//div[@class=\"product-aside__offers-item product-aside__offers-item_secondary\"]")
     private static WebElement utilityForAddingProductMethod;
 
     @FindBy(xpath = "//div[@class=\"product-recommended__subheader\"][1]")
@@ -32,6 +32,14 @@ public class PageOfRequestedProduct extends AbstractPage {
     @FindBy(xpath = "//div[@class=\"auth-bar__counter\"]")
     public WebElement numberOfProductsValue;
 
+    @FindBy(xpath = "//a[@title=\"Корзина\"]")
+    private WebElement cartButton;
+
+    @FindBy(xpath = "//div[@class=\"product-recommended__sidebar-close\"]")
+    private WebElement cross;
+
+    @FindBy(xpath = "//div[@class=\"cart-form__offers-part cart-form__offers-part_data\"]//a[@class=\"cart-form__link cart-form__link_primary cart-form__link_base-alter\"]")
+    public WebElement varForAssertionInCart;
 
     public void moduleChecking() {
         if (isModuleCheckingClickable(moduleWithDescription)) {
@@ -43,12 +51,19 @@ public class PageOfRequestedProduct extends AbstractPage {
         return selectedItemXpath.getText().equalsIgnoreCase(element.getText());
     }
 
-    //пробовал очень много вариантов, ничего особо не вышло, поэтому этот безумный костыль
     public void addProductToCart() {
         actions
                 .moveToElement(utilityForAddingProductMethod)
                 .moveToElement(neededProduct)
                 .click(neededProduct)
                 .perform();
+    }
+
+    public void returnToTheCart() {
+        cartButton.click();
+    }
+
+    public void closeSidePanel() {
+        cross.click();
     }
 }

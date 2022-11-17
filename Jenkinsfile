@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    tools {
-        gradle 'Gradle'
-        jdk 'Java'
-    }
     stages {
         stage('Git Push') {
             steps {
@@ -12,14 +8,11 @@ pipeline {
         }
         stage('Tests') {
             steps {
-                bat "gradle clean test"
+                  sh "chmod 700 /var/jenkins_home/workspace/test/./src/main/resources/driver/chromedriver"
+                  sh "chmod +x gradlew"
+                  sh "./gradlew clean test"
             }
         }
-//         stage('Report') {
-//                 steps {
-//                      always {
-//                      allure includeProperties: false, jdk: '', properties: [[key: 'allure.results.directory', value: 'build/allure-results']], report: 'target/allure-report', results: [[path: 'build/allure-results']]
-//                 }
             }
         post {
                always {

@@ -30,6 +30,7 @@ public class LoginTestPage extends AbstractPage {
     public void fillPasswordBar(String password) {
         passwordBar.sendKeys(password);
     }
+
     public void finallyLogin() {
         loginButton.click();
     }
