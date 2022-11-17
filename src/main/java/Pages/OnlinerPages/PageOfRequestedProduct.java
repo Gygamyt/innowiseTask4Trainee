@@ -20,7 +20,7 @@ public class PageOfRequestedProduct extends AbstractPage {
     @FindBy(xpath = "//li[@class=\"item selected\"]")
     private static WebElement selectedItemXpath;
 
-    @FindBy(xpath = "(//*[text() = 'В корзину'])[2]")
+    @FindBy(xpath = "(//*[text() = 'В корзину'])[1]")
     private static WebElement neededProduct;
 
     @FindBy(xpath = "//div[@class=\"product-aside__offers-item product-aside__offers-item_secondary\"]")

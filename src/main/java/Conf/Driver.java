@@ -31,7 +31,7 @@ public class Driver {
         options.addArguments("--start-maximized");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-extensions");
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920x1080");
         return new ChromeDriver(options);
