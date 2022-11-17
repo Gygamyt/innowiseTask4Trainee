@@ -28,7 +28,7 @@ public class Driver {
     public static WebDriver setDriversConf() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("enable-automation");
-//        options.addArguments("--start-maximized");
+        options.addArguments("--start-maximized");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-extensions");
         options.addArguments("--headless");

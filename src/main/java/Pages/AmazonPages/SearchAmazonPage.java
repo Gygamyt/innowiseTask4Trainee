@@ -12,33 +12,31 @@ public class SearchAmazonPage extends AbstractPage {
         super(driver);
     }
 
-    @FindBy(xpath = "(//a[@class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"])[2]")
+    @FindBy(xpath = "(//a[@class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"])[3]")
     private WebElement searchResultForAdding;
 
-    @FindBy(xpath = "//*[@id=\"add-to-cart-form\"]/div/span[1]")
+    @FindBy(xpath = "//input[@name=\"submit.add-to-cart\"]")
     private WebElement addButtonToCart;
 
     @FindBy(xpath = "//span[contains(@class, \"a-color-state\")]")
     public WebElement searchChecker;
 
-    @FindBy(id = "a-autoid-28-announce")
+    @FindBy(xpath = "//input[@aria-labelledby=\"attachSiNoCoverage-announce\"]")
     private WebElement subAccept;
 
     @FindBy(xpath = "(//span//button[text()=\"Add\"])[1]")
     private WebElement finallyAddButton;
 
-    @FindBy(xpath = "//span[@class=\"a-size-medium a-color-success a-text-beside-button a-text-bold\"]")
+    @FindBy(xpath = "//span[@class=\"a-size-medium-plus a-color-base sw-atc-text a-text-bold\"]")
     public WebElement varForAdding;
 
     public void addPhoneAndCheck() {
         actions
                 .moveToElement(searchResultForAdding)
                 .click(searchResultForAdding)
-                .moveToElement(subAccept)
-                .click(subAccept)
                 .click(addButtonToCart)
                 .perform();
-        waiter.until(ExpectedConditions.elementToBeClickable(finallyAddButton));
-        javascriptExecutor.executeScript("arguments[0].click();", finallyAddButton);
+        waiter.until(ExpectedConditions.elementToBeClickable(subAccept));
+        javascriptExecutor.executeScript("arguments[0].click();", subAccept);
     }
 }

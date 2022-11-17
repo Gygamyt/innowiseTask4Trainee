@@ -12,7 +12,7 @@ public class CartPage extends AbstractPage {
         super(driver);
     }
 
-    @FindBy(xpath = "//span[@class=\"a-size-small sc-action-delete\"]//a[@class=\"a-link-normal\"]")
+    @FindBy(xpath = "//input[@data-action=\"delete\"]")
     WebElement firstItemForDeleting;
 
     @FindBy(xpath = "(//input[@type=\"submit\"][@value=\"Delete\"])[3]")
@@ -20,7 +20,7 @@ public class CartPage extends AbstractPage {
 
     public void deleteItemsFromCart() {
         firstItemForDeleting.click();
-        waiter.until(ExpectedConditions.elementToBeClickable(deleteAllItemsAButton));
-        actions.moveToElement(deleteAllItemsAButton).click().perform();
+//        waiter.until(ExpectedConditions.elementToBeClickable(deleteAllItemsAButton));
+//        actions.moveToElement(deleteAllItemsAButton).click().perform();
     }
 }

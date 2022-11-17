@@ -92,7 +92,7 @@ public class BaseAmazonPage extends AbstractPage {
     }
 
     public void checkResultOfTest() {
-        waiter.until(ExpectedConditions.elementToBeClickable(searchAmazonPage.varForAdding));
+        waiter.until(ExpectedConditions.visibilityOf(searchAmazonPage.varForAdding));
         Driver.getDriver().get("https://www.amazon.com/");
         cartButton.click();
     }
